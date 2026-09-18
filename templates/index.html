@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PSF PlaFitness | Your Goals. Our Mission.</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#workouts">Workouts</a>
+
+            <a href="#trainers">Trainers</a>
+
+            <a href="#booking">Book</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <div class="nav-buttons">
+    <a href="/login" class="nav-button">
+        Log In
+    </a>
+
+        <a href="/signup" class="nav-button">
+            Sign Up
+        </a>
+    </div>
+
+
+        <button class="menu-button" id="menuButton">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    WELCOME TO PSF PLAFITNESS
+                </p>
+
+                <h1>
+                    YOUR GOALS.
+                    <br>
+                    <span>OUR MISSION.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Train smarter. Get stronger. Live healthier.
+                    PSF PlaFitness gives you the tools and support
+                    you need to reach your fitness goals.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#workouts"
+                        class="button primary-button"
+                    >
+                        Explore Workouts
+                    </a>
+
+                    <a
+                        href="#booking"
+                        class="button outline-button"
+                    >
+                        Book a Session
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-down">
+
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
+                <div>
+                    ↓
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Online Access
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    50+
+                </strong>
+
+                <span>
+                    Workouts
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    10+
+                </strong>
+
+                <span>
+                    Training Programs
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    100%
+                </strong>
+
+                <span>
+                    Dedication
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WORKOUTS ================= -->
+
+        <section class="section" id="workouts">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    TRAIN ANYWHERE
+                </p>
+
+                <h2>
+                    ONLINE <span>WORKOUTS</span>
+                </h2>
+
+                <p>
+                    Choose a workout and start training whenever
+                    and wherever you want.
+                </p>
+
+            </div>
+
+
+            <div class="workout-grid">
+
+
+                <!-- ================= STRENGTH ================= -->
+
+                <article class="workout-card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <div class="workout-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Strength
+                    </h3>
+
+                    <p>
+                        Build strength and improve your performance
+                        with structured strength workouts.
+                    </p>
+
+                    <a
+                        href="/workouts/strength"
+                        class="card-link"
+                    >
+                        View Workout →
+                    </a>
+
+                </article>
+
+
+                <!-- ================= FULL BODY ================= -->
+
+                <article class="workout-card featured">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <div class="workout-icon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Full Body
+                    </h3>
+
+                    <p>
+                        Work your entire body with effective
+                        full-body training sessions.
+                    </p>
+
+                    <a
+                        href="/workouts/full-body"
+                        class="card-link"
+                    >
+                        View Workout →
+                    </a>
+
+                </article>
+
+
+                <!-- ================= CARDIO ================= -->
+
+                <article class="workout-card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <div class="workout-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Cardio
+                    </h3>
+
+                    <p>
+                        Improve endurance and keep your body
+                        active with cardio workouts.
+                    </p>
+
+                    <a
+                        href="/workouts/cardio"
+                        class="card-link"
+                    >
+                        View Workout →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAINERS ================= -->
+
+        <section
+            class="trainer-section"
+            id="trainers"
+        >
+
+            <div class="trainer-content">
+
+                <p class="section-label">
+                    TRAIN WITH PURPOSE
+                </p>
+
+                <h2>
+                    MEET YOUR <span>TRAINERS</span>
+                </h2>
+
+                <p>
+                    Professional guidance and personalized
+                    training to help you stay consistent.
+                </p>
+
+                <a
+                    href="#booking"
+                    class="button primary-button"
+                >
+                    Meet With a Trainer
+                </a>
+
+            </div>
+
+        </section>
+
+
+       <!-- ================================
+     BOOKING SECTION
+================================ -->
+
+<section class="booking-section" id="booking">
+
+    <div class="booking-box">
+
+        <p class="section-label">
+            PSF PLAFITNESS
+        </p>
+
+        <h2>
+            BOOK YOUR <span>SESSION.</span>
+        </h2>
+
+        <p>
+            Choose your workout, date, and available time.
+        </p>
+
+
+        <form class="booking-form" id="bookingForm">
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Your Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- SESSION -->
+
+            <div class="form-group">
+
+                <label for="session">
+                    Choose Your Session
+                </label>
+
+                <select id="session" required>
+
+                    <option value="">
+                        Select a session
+                    </option>
+
+                    <option value="Personal Training">
+                        Personal Training
+                    </option>
+
+                    <option value="Strength Training">
+                        Strength Training
+                    </option>
+
+                    <option value="Cardio Training">
+                        Cardio Training
+                    </option>
+
+                    <option value="Online Workout">
+                        Online Workout
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CALENDAR -->
+
+            <div class="calendar-container">
+
+                <div class="calendar-header">
+
+                    <button
+                        type="button"
+                        id="previousMonth"
+                        class="calendar-arrow"
+                    >
+                        ←
+                    </button>
+
+                    <h3 id="calendarMonth">
+                        Month Year
+                    </h3>
+
+                    <button
+                        type="button"
+                        id="nextMonth"
+                        class="calendar-arrow"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="calendar-weekdays">
+
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+
+                </div>
+
+
+                <div
+                    id="calendarDays"
+                    class="calendar-days"
+                ></div>
+
+            </div>
+
+
+            <!-- SELECTED DATE -->
+
+            <div class="selected-date-box">
+
+                <strong>
+                    Selected Date:
+                </strong>
+
+                <span id="selectedDateText">
+                    Please choose a date
+                </span>
+
+            </div>
+
+
+            <!-- HIDDEN DATE VALUE -->
+
+            <input
+                type="hidden"
+                id="date"
+                name="date"
+            >
+
+
+            <!-- TIME SLOTS -->
+
+            <div class="time-section">
+
+                <h3>
+                    Choose a Time
+                </h3>
+
+                <p class="time-note">
+                    60-minute appointments • 9 AM–5 PM
+                </p>
+
+
+                <div
+                    id="timeSlots"
+                    class="time-slots"
+                >
+
+                    <p class="choose-date-message">
+                        Please choose a date first.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SELECTED TIME -->
+
+            <input
+                type="hidden"
+                id="time"
+                name="time"
+            >
+
+
+            <!-- BOOK BUTTON -->
+
+            <button
+                type="submit"
+                class="button primary-button"
+            >
+                Book My Session
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <p
+                id="bookingMessage"
+                class="form-message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section
+            class="contact-section"
+            id="contact"
+        >
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    GET IN TOUCH
+                </p>
+
+                <h2>
+                    CONTACT <span>PSF</span>
+                </h2>
+
+                <p>
+                    Have a question? Send us a message.
+                </p>
+
+            </div>
+
+
+            <form
+                class="contact-form"
+                id="contactForm"
+            >
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="Your Name"
+                    required
+                >
+
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    placeholder="Your Email"
+                    required
+                >
+
+
+                <textarea
+                    id="contactMessage"
+                    rows="6"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="button primary-button"
+                >
+                    Send Message
+                </button>
+
+
+                <p
+                    id="contactResponse"
+                    class="form-message"
+                ></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <strong>
+                PSF
+            </strong>
+
+            <span>
+                PlaFitness
+            </span>
+
+        </div>
+
+
+        <p>
+            YOUR GOALS • OUR MISSION
+        </p>
+
+
+        <div class="footer-line"></div>
+
+
+        <p class="copyright">
+            © 2026 PSF PlaFitness. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

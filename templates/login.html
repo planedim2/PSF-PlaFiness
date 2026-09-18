@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Log In | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="booking-section">
+
+            <div class="booking-box">
+
+                <p class="section-label">
+                    WELCOME BACK
+                </p>
+
+                <h2>
+                    LOG <span>IN.</span>
+                </h2>
+
+                <p>
+                    Log in to access your PSF PlaFitness account.
+                </p>
+
+
+                <form
+                    class="contact-form"
+                    method="POST"
+                    action="/login"
+                >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="button primary-button"
+                    >
+                        Log In
+                    </button>
+
+                </form>
+
+
+                <p style="margin-top: 25px;">
+                    Don't have an account?
+                    <a href="/signup" class="card-link">
+                        Sign Up
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </div>
+
+        <p>
+            YOUR GOALS • OUR MISSION
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

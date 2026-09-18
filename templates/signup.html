@@ -1,0 +1,250 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="booking-section">
+
+            <div class="booking-box auth-box">
+
+                <p class="section-label">
+                    JOIN PSF PLAFITNESS
+                </p>
+
+                <h2>
+                    CREATE YOUR
+                    <span>ACCOUNT.</span>
+                </h2>
+
+                <p>
+                    Create your account to access your workouts
+                    and bookings.
+                </p>
+
+
+                <!-- ERROR MESSAGE -->
+
+                {% if error %}
+                    <div class="form-message error-message">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+
+                <form
+                    class="contact-form"
+                    method="POST"
+                    action="/signup"
+                    onsubmit="return checkPasswords()"
+                >
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label for="signup-password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="signup-password"
+                            name="password"
+                            placeholder="Create a password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('signup-password', this)"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm_password"
+                            placeholder="Confirm your password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('confirm-password', this)"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="password-error"
+                        class="form-message error-message"
+                        style="display: none;"
+                    >
+                        Passwords do not match.
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="button primary-button"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p style="margin-top: 25px;">
+
+                    Already have an account?
+
+                    <a href="/login" class="card-link">
+                        Log In
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </div>
+
+        <p>
+            YOUR GOALS • OUR MISSION
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function togglePassword(inputId, button) {
+
+            const input = document.getElementById(inputId);
+
+            if (input.type === "password") {
+
+                input.type = "text";
+                button.textContent = "Hide";
+
+            } else {
+
+                input.type = "password";
+                button.textContent = "Show";
+
+            }
+        }
+
+
+        function checkPasswords() {
+
+            const password =
+                document.getElementById("signup-password").value;
+
+            const confirmPassword =
+                document.getElementById("confirm-password").value;
+
+            const error =
+                document.getElementById("password-error");
+
+
+            if (password !== confirmPassword) {
+
+                error.style.display = "block";
+
+                return false;
+
+            }
+
+
+            error.style.display = "none";
+
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

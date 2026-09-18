@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workouts | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <strong>PSF</strong>
+
+        <span>PlaFitness</span>
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+        <a
+            href="/dashboard"
+            class="nav-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="/logout"
+            class="nav-button"
+        >
+            Log Out
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- WORKOUT LIBRARY -->
+
+<main>
+
+    <section class="booking-section">
+
+        <div class="booking-box">
+
+            <p class="section-label">
+                PSF PLAFITNESS
+            </p>
+
+
+            <h2>
+                WORKOUT <span>LIBRARY.</span>
+            </h2>
+
+
+            <p>
+                Choose a workout to learn more about it.
+            </p>
+
+
+
+            <!-- WORKOUT GRID -->
+
+            <div class="workout-library">
+
+
+                <!-- SQUATS -->
+
+                <a
+                    href="/workout/squats"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/squats.jpg') }}"
+                        alt="Squats exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            LOWER BODY
+                        </span>
+
+                        <h3>
+                            Squats
+                        </h3>
+
+                        <p>
+                            Build strength in your legs and glutes.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PUSH UPS -->
+
+                <a
+                    href="/workout/push-ups"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/push-ups.jpg') }}"
+                        alt="Push-ups exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            UPPER BODY
+                        </span>
+
+                        <h3>
+                            Push-Ups
+                        </h3>
+
+                        <p>
+                            Strengthen your chest, shoulders, and arms.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- LUNGES -->
+
+                <a
+                    href="/workout/lunges"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/lunges.jpg') }}"
+                        alt="Lunges exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            LOWER BODY
+                        </span>
+
+                        <h3>
+                            Lunges
+                        </h3>
+
+                        <p>
+                            Improve lower-body strength and balance.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PLANK -->
+
+                <a
+                    href="/workout/plank"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/plank.jpg') }}"
+                        alt="Plank exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            CORE
+                        </span>
+
+                        <h3>
+                            Plank
+                        </h3>
+
+                        <p>
+                            Strengthen your core and improve stability.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 5 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- JUMPING JACKS -->
+
+                <a
+                    href="/workout/jumping-jacks"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/jumping-jacks.jpg') }}"
+                        alt="Jumping jacks exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            CARDIO
+                        </span>
+
+                        <h3>
+                            Jumping Jacks
+                        </h3>
+
+                        <p>
+                            Get your heart rate up with a simple cardio workout.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 5 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- BURPEES -->
+
+                <a
+                    href="/workout/burpees"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/burpees.jpg') }}"
+                        alt="Burpees exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            FULL BODY
+                        </span>
+
+                        <h3>
+                            Burpees
+                        </h3>
+
+                        <p>
+                            A full-body movement that combines strength and cardio.
+                        </p>
+
+                        <span class="workout-details">
+                            Intermediate • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MOUNTAIN CLIMBERS -->
+
+                <a
+                    href="/workout/mountain-climbers"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/mountain-climbers.jpg') }}"
+                        alt="Mountain climbers exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            CARDIO
+                        </span>
+
+                        <h3>
+                            Mountain Climbers
+                        </h3>
+
+                        <p>
+                            Challenge your core while adding cardio movement.
+                        </p>
+
+                        <span class="workout-details">
+                            Intermediate • 8 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- GLUTE BRIDGES -->
+
+                <a
+                    href="/workout/glute-bridges"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/glute-bridges.jpg') }}"
+                        alt="Glute bridges exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            LOWER BODY
+                        </span>
+
+                        <h3>
+                            Glute Bridges
+                        </h3>
+
+                        <p>
+                            Strengthen your glutes and hips.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- DUMBBELL ROWS -->
+
+                <a
+                    href="/workout/dumbbell-rows"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/dumbbell-rows.jpg') }}"
+                        alt="Dumbbell rows exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            STRENGTH
+                        </span>
+
+                        <h3>
+                            Dumbbell Rows
+                        </h3>
+
+                        <p>
+                            Train your back and upper-body pulling muscles.
+                        </p>
+
+                        <span class="workout-details">
+                            Intermediate • 15 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- SHOULDER PRESS -->
+
+                <a
+                    href="/workout/shoulder-press"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/shoulder-press.jpg') }}"
+                        alt="Shoulder press exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            STRENGTH
+                        </span>
+
+                        <h3>
+                            Shoulder Press
+                        </h3>
+
+                        <p>
+                            Build strength in your shoulders and arms.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 10 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- BICYCLE CRUNCHES -->
+
+                <a
+                    href="/workout/bicycle-crunches"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/bicycle-crunches.jpg') }}"
+                        alt="Bicycle crunches exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            CORE
+                        </span>
+
+                        <h3>
+                            Bicycle Crunches
+                        </h3>
+
+                        <p>
+                            Work your abdominal muscles with controlled movement.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 8 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- HIGH KNEES -->
+
+                <a
+                    href="/workout/high-knees"
+                    class="workout-library-card"
+                >
+
+                    <img
+                        src="{{ url_for('static', filename='images/high-knees.jpg') }}"
+                        alt="High knees exercise"
+                    >
+
+                    <div class="workout-card-content">
+
+                        <span class="workout-category">
+                            CARDIO
+                        </span>
+
+                        <h3>
+                            High Knees
+                        </h3>
+
+                        <p>
+                            Add an energetic cardio movement to your workout.
+                        </p>
+
+                        <span class="workout-details">
+                            Beginner • 5 min
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            PSF
+        </strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </div>
+
+
+    <p>
+        YOUR GOALS • OUR MISSION
+    </p>
+
+
+    <div class="footer-line"></div>
+
+
+    <p class="copyright">
+        © 2026 PSF PlaFitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

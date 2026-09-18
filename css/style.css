@@ -1,0 +1,2207 @@
+/* =====================================================
+   PSF PLAFITNESS
+   MAIN WEBSITE STYLES
+   ===================================================== */
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #030609;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   COLORS
+   ========================= */
+
+:root {
+    --black: #030609;
+    --dark-black: #010204;
+    --dark-blue: #061426;
+    --blue: #087cff;
+    --bright-blue: #168dff;
+    --white: #ffffff;
+    --gray: #a8b0ba;
+    --light-gray: #d9dee5;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(1, 5, 10, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
+
+    transition: 0.3s ease;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo strong {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--blue);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-size: 19px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.5px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--light-gray);
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+    padding: 12px 23px;
+
+    background: var(--blue);
+    border: 1px solid var(--blue);
+
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: transparent;
+    color: var(--blue);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-button {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 140px 7% 100px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(8, 124, 255, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #010204 0%,
+            #061426 55%,
+            #010204 100%
+        );
+}
+
+
+/* HERO GLOW */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(8, 124, 255, 0.12);
+
+    filter: blur(80px);
+}
+
+
+/* OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(1, 2, 4, 0.98),
+            rgba(1, 2, 4, 0.55),
+            rgba(1, 2, 4, 0.15)
+        );
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.hero-label {
+    margin-bottom: 20px;
+
+    color: var(--blue);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 95px);
+
+    line-height: 0.98;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero-description {
+    max-width: 600px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+    margin-bottom: 40px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 28px;
+
+    border: 1px solid transparent;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.primary-button {
+    background: var(--blue);
+    color: white;
+}
+
+.primary-button:hover {
+    background: var(--bright-blue);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(8, 124, 255, 0.3);
+}
+
+.outline-button {
+    border-color: rgba(255, 255, 255, 0.3);
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.outline-button:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+
+/* SCROLL */
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 30px;
+    left: 7%;
+
+    color: var(--gray);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.scroll-down div {
+    margin-top: 5px;
+
+    color: var(--blue);
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   STATS
+   ========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #050b12;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stat {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+
+    color: var(--blue);
+
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.stat span {
+    color: var(--gray);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+   ========================= */
+
+.section {
+    padding: 120px 7%;
+    background: var(--black);
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: var(--blue);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading h2,
+.trainer-content h2,
+.booking-box h2 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 span,
+.trainer-content h2 span,
+.booking-box h2 span {
+    color: var(--blue);
+}
+
+.section-heading > p:last-child,
+.trainer-content > p {
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   WORKOUT CARDS
+   ========================= */
+
+.workout-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.workout-card {
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071321,
+            #030609
+        );
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+.workout-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    bottom: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(8, 124, 255, 0.12);
+
+    filter: blur(20px);
+}
+
+.workout-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(8, 124, 255, 0.6);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.workout-card.featured {
+    border-color: rgba(8, 124, 255, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            #08203a,
+            #030609
+        );
+}
+
+.card-number {
+    color: rgba(255, 255, 255, 0.15);
+
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.workout-icon {
+    margin: 25px 0 15px;
+
+    font-size: 42px;
+}
+
+.workout-card h3 {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.workout-card p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.card-link {
+    position: relative;
+    z-index: 2;
+
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   TRAINERS
+   ========================= */
+
+.trainer-section {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #010204 0%,
+            #061426 65%,
+            #030609 100%
+        );
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.trainer-content {
+    max-width: 600px;
+}
+
+.trainer-content p {
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOOKING
+   ========================= */
+
+.booking-section {
+    padding: 120px 7%;
+
+    background: #050b12;
+}
+
+.booking-box {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 60px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #08182a,
+            #030609
+        );
+
+    border: 1px solid rgba(8, 124, 255, 0.3);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.booking-box > p {
+    color: var(--gray);
+}
+
+
+/* FORM */
+
+.booking-form {
+    margin-top: 35px;
+}
+
+.input-group {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 17px 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(8, 124, 255, 0.08);
+}
+
+.booking-form select {
+    color: white;
+}
+
+.booking-form select option {
+    background: #061426;
+    color: white;
+}
+
+.full-button {
+    width: 100%;
+}
+
+.form-message {
+    margin-top: 15px;
+
+    color: var(--blue);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact-section {
+    padding: 120px 7%;
+
+    background: var(--black);
+}
+
+.contact-form {
+    max-width: 750px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.contact-form .button {
+    align-self: flex-start;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 60px 7% 30px;
+
+    background: #010204;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo strong {
+    color: var(--blue);
+
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    font-size: 19px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+footer > p {
+    color: var(--gray);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.footer-line {
+    width: 70px;
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: var(--blue);
+}
+
+.copyright {
+    color: #68717c !important;
+
+    font-size: 10px !important;
+
+    letter-spacing: 0 !important;
+}
+
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+.mobile-active {
+    display: flex !important;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 82px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        background: #030609;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-button {
+    display: inline-block;
+}
+    
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .section,
+    .booking-section,
+    .contact-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .workout-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .trainer-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(3) {
+        border-top: 1px solid var(--border);
+    }
+
+    .stat:nth-child(4) {
+        border-top: 1px solid var(--border);
+    }
+
+    .booking-box {
+        padding: 45px 30px;
+    }
+}
+
+
+/* =========================
+   PHONE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .navbar {
+        height: 72px;
+    }
+
+    .nav-links {
+        top: 72px;
+    }
+
+    .logo strong {
+        font-size: 21px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 750px;
+
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat {
+        padding: 25px 10px;
+    }
+
+    .stat strong {
+        font-size: 24px;
+    }
+
+    .stat span {
+        font-size: 9px;
+    }
+
+    .section,
+    .booking-section,
+    .contact-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .section-heading h2,
+    .trainer-content h2,
+    .booking-box h2 {
+        font-size: 38px;
+    }
+
+    .workout-card {
+        padding: 28px;
+
+        min-height: 320px;
+    }
+
+    .trainer-section {
+        min-height: 500px;
+    }
+
+    .booking-box {
+        padding: 35px 20px;
+    }
+
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/* ================================
+   WORKOUT VIDEOS
+================================ */
+
+.workout-card iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.workout-card {
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+
+    .workout-card iframe {
+        height: 220px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .workout-card iframe {
+        height: 200px;
+    }
+
+}
+
+/* ================================
+   WORKOUT VIDEO GRID
+================================ */
+
+.booking-box .workout-card {
+    width: 100%;
+}
+
+.booking-box .workout-card iframe {
+    display: block;
+}
+
+@media (min-width: 901px) {
+
+    .booking-box {
+        max-width: 1200px;
+    }
+
+    .booking-box .workout-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ================================
+   WELCOME SCREEN
+================================ */
+
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(1, 5, 10, 0.98);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+
+    z-index: 9999;
+
+    animation: welcomeFadeOut 1s ease 4s forwards;
+}
+
+
+@keyframes welcomeFadeOut {
+
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+}
+
+
+/* =================================
+   SIGN UP / LOGIN
+   PSF PLAFITNESS
+================================= */
+
+.auth-box {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* FORM LABELS */
+
+.auth-box .contact-form label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* INPUTS */
+
+.auth-box .contact-form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 16px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(158, 220, 255, 0.35);
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* INPUT PLACEHOLDER */
+
+.auth-box .contact-form input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* INPUT FOCUS */
+
+.auth-box .contact-form input:focus {
+    border-color: #9edcff;
+
+    background: rgba(158, 220, 255, 0.07);
+
+    box-shadow:
+        0 0 0 3px rgba(158, 220, 255, 0.10),
+        0 0 20px rgba(158, 220, 255, 0.12);
+}
+
+
+/* PASSWORD CONTAINER */
+
+.password-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* PASSWORD INPUT */
+
+.password-wrapper input {
+    padding-right: 75px !important;
+}
+
+
+/* SHOW / HIDE BUTTON */
+
+.password-toggle {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #9edcff;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 6px;
+}
+
+
+.password-toggle:hover {
+    color: white;
+}
+
+
+/* ERROR MESSAGE */
+
+.form-message {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 20px 0;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ERROR */
+
+.error-message {
+    background: rgba(180, 30, 30, 0.15);
+
+    border: 1px solid rgba(255, 100, 100, 0.45);
+
+    color: #ffb5b5;
+}
+
+
+/* LOGIN / SIGNUP BUTTON */
+
+.auth-box .primary-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    cursor: pointer;
+}
+
+
+/* LINK */
+
+.auth-box .card-link {
+    color: #9edcff;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.auth-box .card-link:hover {
+    color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .auth-box {
+        width: 100%;
+    }
+
+    .auth-box .contact-form input {
+        padding: 14px;
+    }
+
+    .password-wrapper input {
+        padding-right: 70px !important;
+    }
+
+}
+
+/* =================================
+   BOOKING CALENDAR
+================================= */
+
+.calendar-container {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(158, 220, 255, 0.25);
+    border-radius: 18px;
+}
+
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.calendar-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+
+.calendar-arrow {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #9edcff;
+    background: transparent;
+    color: #9edcff;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.calendar-arrow:hover {
+    background: #9edcff;
+    color: #01050a;
+}
+
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+
+.calendar-weekdays span {
+    text-align: center;
+    color: #9edcff;
+    font-size: 12px;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+
+.calendar-day {
+    min-height: 42px;
+    border: 1px solid rgba(158, 220, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+
+.calendar-day:hover:not(:disabled) {
+    background: #9edcff;
+    color: #01050a;
+    transform: translateY(-2px);
+}
+
+
+.calendar-day:disabled {
+    cursor: not-allowed;
+    opacity: 0.25;
+}
+
+
+.calendar-day.today-date {
+    border: 2px solid #9edcff;
+}
+
+
+.calendar-day.selected-date {
+    background: #9edcff;
+    color: #01050a;
+    font-weight: 800;
+}
+
+
+.calendar-empty {
+    min-height: 42px;
+}
+
+
+.selected-date-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(158, 220, 255, 0.08);
+    color: white;
+}
+
+
+.selected-date-box strong {
+    color: #9edcff;
+}
+
+
+#selectedDateText {
+    margin-left: 6px;
+}
+
+
+.time-section {
+    margin-top: 25px;
+}
+
+
+.time-section h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+
+.time-note {
+    color: #9edcff;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.time-slot {
+    padding: 13px 8px;
+    border: 1px solid #9edcff;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: 600;
+}
+
+
+.time-slot:hover:not(:disabled) {
+    background: #9edcff;
+    color: #01050a;
+}
+
+
+.time-slot.selected-time {
+    background: #9edcff;
+    color: #01050a;
+    font-weight: 800;
+}
+
+
+.time-slot.time-unavailable {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #777;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+
+.choose-date-message {
+    color: #aaa;
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+
+.success-message {
+    color: #9edcff;
+    font-weight: 700;
+}
+
+
+.error-message {
+    color: #ff7777;
+    font-weight: 700;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .calendar-container {
+        padding: 15px;
+    }
+
+
+    .calendar-weekdays,
+    .calendar-days {
+        gap: 4px;
+    }
+
+
+    .calendar-day {
+        min-height: 38px;
+        font-size: 13px;
+    }
+
+
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =================================
+   ADMIN DASHBOARD
+================================= */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0 40px;
+}
+
+
+.admin-stat-card {
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(158, 220, 255, 0.25);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.admin-stat-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+.admin-stat-card h3 {
+    color: #9edcff;
+    font-size: 32px;
+    margin: 5px 0;
+}
+
+
+.admin-stat-card p {
+    color: white;
+    margin: 0;
+    font-size: 13px;
+}
+
+
+.admin-title {
+    margin-top: 40px;
+    margin-bottom: 18px;
+    color: #9edcff;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.admin-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(158, 220, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.admin-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.admin-item strong {
+    color: white;
+}
+
+
+.admin-item span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+.admin-item p {
+    color: #ddd;
+    margin: 5px 0 0;
+}
+
+
+.admin-item .cancel-button {
+    width: auto;
+    white-space: nowrap;
+    margin: 0;
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .admin-item .cancel-button {
+        width: 100%;
+    }
+
+}
+
+/* =================================
+   MEMBER DASHBOARD
+================================= */
+
+.dashboard-welcome {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+
+.dashboard-welcome strong {
+    color: #9edcff;
+}
+
+
+.dashboard-section-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #9edcff;
+    letter-spacing: 1px;
+}
+
+
+/* UPCOMING BOOKING */
+
+.upcoming-booking {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(158, 220, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.upcoming-booking h3 {
+    color: #9edcff;
+    margin-bottom: 20px;
+}
+
+
+.upcoming-booking-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+.upcoming-booking-info div {
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(158, 220, 255, 0.07);
+}
+
+
+.booking-label {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+
+.upcoming-booking-info strong {
+    color: white;
+    font-size: 15px;
+}
+
+
+/* =================================
+   CUTE WELCOME SCREEN
+================================= */
+
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff5ff,
+            #f9d8e8,
+            #e8f7ff
+        );
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.welcome-screen.welcome-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+.welcome-message {
+    text-align: center;
+    animation: welcomePop 1s ease;
+}
+
+
+.welcome-message p {
+    color: #416477;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.welcome-message h1 {
+    margin: 8px 0;
+    color: #183c52;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+.welcome-message h1 span {
+    display: block;
+    color: #d56f9a;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+
+.welcome-user {
+    margin-top: 15px;
+    color: #416477 !important;
+}
+
+
+.welcome-sparkles {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+
+.welcome-flowers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 38px;
+}
+
+
+.welcome-left {
+    animation: flowerLeft 1s ease;
+}
+
+
+.welcome-right {
+    animation: flowerRight 1s ease;
+}
+
+
+@keyframes welcomePop {
+
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes flowerLeft {
+
+    0% {
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes flowerRight {
+
+    0% {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .welcome-screen {
+        gap: 15px;
+        padding: 20px;
+    }
+
+
+    .welcome-message h1 {
+        font-size: 34px;
+    }
+
+
+    .welcome-flowers {
+        font-size: 25px;
+    }
+
+
+    .upcoming-booking-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =================================
+   WORKOUT DETAIL PAGE
+================================= */
+
+.workout-detail-section {
+    padding: 80px 20px;
+}
+
+
+.workout-detail-box {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(158, 220, 255, 0.25);
+}
+
+
+.workout-detail-image img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+
+.workout-detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.workout-detail-content h1 {
+    color: white;
+    font-size: 44px;
+    margin: 10px 0 15px;
+}
+
+
+.workout-description {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+
+.workout-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+
+.workout-info div {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(158, 220, 255, 0.07);
+}
+
+
+.workout-info span {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+
+.workout-info strong {
+    color: #9edcff;
+}
+
+
+.workout-detail-content h2 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+.workout-detail-content h2 span {
+    color: #9edcff;
+}
+
+
+.exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.exercise-item span {
+    color: #9edcff;
+    font-size: 18px;
+}
+
+
+.exercise-item strong {
+    color: white;
+}
+
+
+@media (max-width: 750px) {
+
+    .workout-detail-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .workout-detail-image img {
+        height: 300px;
+    }
+
+
+    .workout-detail-content h1 {
+        font-size: 34px;
+    }
+
+
+    .workout-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   YOUTUBE WORKOUT VIDEO
+========================= */
+
+.workout-video {
+    margin-top: 40px;
+}
+
+.workout-video h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid #9edcff;
+    background: #000000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.no-video {
+    color: #9edcff;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .video-container {
+        border-radius: 12px;
+    }
+
+}
+
+/* =========================
+   DASHBOARD NAVIGATION
+========================= */
+
+.dashboard-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(5, 15, 30, 0.95);
+    border-bottom: 1px solid #9edcff;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.dashboard-nav a:hover {
+    color: #9edcff;
+}
+
+/* Sign Out */
+
+.signout-link {
+    color: #ff7777 !important;
+    border: 1px solid #ff7777;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.signout-link:hover {
+    color: #ffffff !important;
+    background: #ff7777;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-nav {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .nav-left {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-right {
+        justify-content: center;
+    }
+
+    .signout-link {
+        padding: 9px 20px;
+    }
+}

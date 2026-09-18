@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Strength Workout | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </a>
+
+        <a href="/workouts" class="nav-button">
+            Workouts
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="booking-section">
+
+            <div class="booking-box">
+
+                <p class="section-label">
+                    PSF PLAFITNESS
+                </p>
+
+                <h2>
+                    STRENGTH <span>WORKOUT.</span>
+                </h2>
+
+                <p>
+                    Follow along with this guided workout.
+                    Take breaks when needed and move at your own pace.
+                </p>
+
+                <div class="workout-card">
+
+                    <div class="workout-icon">
+                        💪
+                    </div>
+
+                    <h3>
+                        Strength Training
+                    </h3>
+
+                    <iframe
+                        width="100%"
+                        height="400"
+                        src="https://www.youtube.com/embed/XGD9xGR-V-8"
+                        title="Strength Workout"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <br>
+
+                <a href="/workouts" class="button primary-button">
+                    ← Back to Workouts
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            <strong>PSF</strong>
+            <span>PlaFitness</span>
+        </div>
+
+        <p>
+            YOUR GOALS • OUR MISSION
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

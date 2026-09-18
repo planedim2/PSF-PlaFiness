@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <strong>PSF</strong>
+
+        <span>PlaFitness</span>
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+        <a href="/dashboard" class="nav-button">
+            Dashboard
+        </a>
+
+        <a href="/logout" class="nav-button">
+            Log Out
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+    <section class="booking-section">
+
+        <div class="booking-box">
+
+            <p class="section-label">
+                PSF PLAFITNESS
+            </p>
+
+
+            <h2>
+                MY <span>BOOKINGS.</span>
+            </h2>
+
+
+            <p>
+                View and manage your upcoming sessions.
+            </p>
+
+
+            {% if bookings %}
+
+                <div class="workout-grid">
+
+                    {% for booking in bookings %}
+
+                        <article class="workout-card">
+
+                            <div class="workout-icon">
+                                📅
+                            </div>
+
+
+                            <h3>
+                                {{ booking["session"] }}
+                            </h3>
+
+
+                            <p>
+                                <strong>📅 Date:</strong>
+                                {{ booking["date"] }}
+                            </p>
+
+
+                            <p>
+                                <strong>🕐 Time:</strong>
+                                {{ booking["time"] }}
+                            </p>
+
+
+                            <p>
+                                <strong>👤 Name:</strong>
+                                {{ booking["name"] }}
+                            </p>
+
+
+                            <p>
+                                <strong>✉️ Email:</strong>
+                                {{ booking["email"] }}
+                            </p>
+
+
+                            <button
+                                type="button"
+                                class="button cancel-button"
+                                onclick="cancelBooking "{{ booking['id'] }}"
+                            >
+                                Cancel Booking
+                            </button>
+
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <div class="workout-card">
+
+                    <div class="workout-icon">
+                        📅
+                    </div>
+
+
+                    <h3>
+                        No Bookings Yet
+                    </h3>
+
+
+                    <p>
+                        You don't have any bookings yet.
+                    </p>
+
+
+                    <a
+                        href="/#booking"
+                        class="button primary-button"
+                    >
+                        Book a Session
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            <br>
+
+
+            <a
+                href="/dashboard"
+                class="button primary-button"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>PSF</strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </div>
+
+
+    <p>
+        YOUR GOALS • OUR MISSION
+    </p>
+
+
+    <div class="footer-line"></div>
+
+
+    <p class="copyright">
+        © 2026 PSF PlaFitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+async function cancelBooking(bookingId) {
+
+    const confirmed = confirm(
+        "Are you sure you want to cancel this booking?"
+    );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            `/cancel-booking/${bookingId}`,
+            {
+                method: "POST"
+            }
+        );
+
+
+        const result = await response.json();
+
+
+        if (result.success) {
+
+            alert(result.message);
+
+            window.location.reload();
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+
+    } catch (error) {
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

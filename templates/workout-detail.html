@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ workout["name"] }} | PSF PlaFitness
+    </title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <strong>
+            PSF
+        </strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+        <a
+            href="/workouts"
+            class="nav-button"
+        >
+            Workouts
+        </a>
+
+        <a
+            href="/dashboard"
+            class="nav-button"
+        >
+            Dashboard
+        </a>
+
+        <a
+            href="/logout"
+            class="nav-button"
+        >
+            Log Out
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- WORKOUT DETAILS -->
+
+<main>
+
+    <section class="workout-detail-section">
+
+        <div class="workout-detail-box">
+
+
+            <!-- WORKOUT IMAGE -->
+
+            <div class="workout-detail-image">
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='images/' + workout['image']
+                    ) }}"
+                    alt="{{ workout['name'] }}"
+                >
+
+            </div>
+
+
+
+            <!-- WORKOUT INFORMATION -->
+
+            <div class="workout-detail-content">
+
+                <span class="workout-category">
+                    {{ workout["category"] }}
+                </span>
+
+
+                <h1>
+                    {{ workout["name"] }}
+                </h1>
+
+
+                <p class="workout-description">
+                    {{ workout["description"] }}
+                </p>
+
+
+
+                <!-- DETAILS -->
+
+                <div class="workout-info">
+
+                    <div>
+
+                        <span>
+                            DIFFICULTY
+                        </span>
+
+                        <strong>
+                            {{ workout["difficulty"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            DURATION
+                        </span>
+
+                        <strong>
+                            {{ workout["duration"] }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EXERCISES -->
+
+                <h2>
+                    WORKOUT <span>PLAN.</span>
+                </h2>
+
+
+                <div class="exercise-list">
+
+                    {% for exercise in workout["exercises"] %}
+
+                        <div class="exercise-item">
+
+                            <span>
+                                ✓
+                            </span>
+
+                            <strong>
+                                {{ exercise }}
+                            </strong>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+
+                <!-- BACK BUTTON -->
+
+                <a
+                    href="/workouts"
+                    class="button primary-button"
+                >
+                    ← Back to Workouts
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            PSF
+        </strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </div>
+
+
+    <p>
+        YOUR GOALS • OUR MISSION
+    </p>
+
+
+    <div class="footer-line"></div>
+
+
+    <p class="copyright">
+        © 2026 PSF PlaFitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

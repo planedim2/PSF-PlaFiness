@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Member Dashboard | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     CUTE WELCOME SCREEN
+================================ -->
+
+<div id="welcomeScreen" class="welcome-screen">
+
+    <div class="welcome-flowers welcome-left">
+
+        <span>🌸</span>
+        <span>🩷</span>
+        <span>🌷</span>
+
+    </div>
+
+
+    <div class="welcome-message">
+
+        <p>
+            Welcome to
+        </p>
+
+        <h1>
+            PSF
+
+            <span>
+                PlaFitness
+            </span>
+        </h1>
+
+        <div class="welcome-sparkles">
+            ✨ 💕 ✨
+        </div>
+
+        <p class="welcome-user">
+            Hi, {{ name }}! 💙
+        </p>
+
+    </div>
+
+
+    <div class="welcome-flowers welcome-right">
+
+        <span>💙</span>
+        <span>🌸</span>
+        <span>🦋</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="dashboard-nav">
+
+    <div class="nav-left">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/workouts">Workouts</a>
+        <a href="/my-bookings">My Bookings</a>
+        <a href="/account">Account</a>
+
+        {% if session.get("admin") %}
+            <a href="/admin">Admin</a>
+        {% endif %}
+    </div>
+
+    <div class="nav-right">
+        <a href="/logout" class="signout-link">
+            Sign Out
+        </a>
+    </div>
+
+</nav>
+
+
+
+
+
+<!-- ================================
+     MAIN DASHBOARD
+================================ -->
+
+<main>
+
+    <section class="booking-section">
+
+        <div class="booking-box">
+
+
+            <p class="section-label">
+                PSF PLAFITNESS
+            </p>
+
+
+            <h2>
+                MEMBER <span>DASHBOARD.</span>
+            </h2>
+
+
+            <p class="dashboard-welcome">
+                Welcome, <strong>{{ name }}</strong>! 👋
+            </p>
+
+
+            <p>
+                This is your PSF PlaFitness member area.
+            </p>
+
+
+
+            <!-- ================================
+                 UPCOMING BOOKING
+            ================================= -->
+
+            <div class="upcoming-booking">
+
+                <h3>
+                    📅 YOUR UPCOMING BOOKING
+                </h3>
+
+
+                {% if booking %}
+
+                    <div class="upcoming-booking-info">
+
+                        <div>
+
+                            <span class="booking-label">
+                                SESSION
+                            </span>
+
+                            <strong>
+                                {{ booking["session"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="booking-label">
+                                DATE
+                            </span>
+
+                            <strong>
+                                {{ booking["date"] }}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="booking-label">
+                                TIME
+                            </span>
+
+                            <strong>
+                                {{ booking["time"] }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="/my-bookings"
+                        class="card-link"
+                    >
+                        Manage My Booking →
+                    </a>
+
+
+                {% else %}
+
+                    <p>
+                        You don't have an upcoming booking yet.
+                    </p>
+
+
+                    <a
+                        href="/#booking"
+                        class="button primary-button"
+                    >
+                        Book a Session
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+
+
+            <!-- ================================
+                 QUICK ACTIONS
+            ================================= -->
+
+            <h3 class="dashboard-section-title">
+                QUICK ACCESS
+            </h3>
+
+
+            <div class="workout-grid">
+
+
+                <!-- WORKOUTS -->
+
+                <article class="workout-card">
+
+                    <div class="workout-icon">
+                        💪
+                    </div>
+
+
+                    <h3>
+                        Online Workouts
+                    </h3>
+
+
+                    <p>
+                        Access your workouts and training programs.
+                    </p>
+
+
+                    <a
+                        href="/workouts"
+                        class="card-link"
+                    >
+                        View Workouts →
+                    </a>
+
+                </article>
+
+
+
+                <!-- BOOKINGS -->
+
+                <article class="workout-card">
+
+                    <div class="workout-icon">
+                        📅
+                    </div>
+
+
+                    <h3>
+                        My Bookings
+                    </h3>
+
+
+                    <p>
+                        View and manage your training sessions.
+                    </p>
+
+
+                    <a
+                        href="/my-bookings"
+                        class="card-link"
+                    >
+                        View Bookings →
+                    </a>
+
+                </article>
+
+
+
+                <!-- ACCOUNT -->
+
+                <article class="workout-card">
+
+                    <div class="workout-icon">
+                        👤
+                    </div>
+
+
+                    <h3>
+                        My Account
+                    </h3>
+
+
+                    <p>
+                        Manage your PSF PlaFitness account.
+                    </p>
+
+
+                    <a
+                        href="/account"
+                        class="card-link"
+                    >
+                        Account →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            PSF
+        </strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </div>
+
+
+    <p>
+        YOUR GOALS • OUR MISSION
+    </p>
+
+
+    <div class="footer-line"></div>
+
+
+    <p class="copyright">
+        © 2026 PSF PlaFitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================================
+     WELCOME SCREEN SCRIPT
+================================ -->
+
+<script>
+
+window.addEventListener("load", function () {
+
+    const welcomeScreen =
+        document.getElementById("welcomeScreen");
+
+
+    setTimeout(function () {
+
+        welcomeScreen.classList.add("welcome-hidden");
+
+    }, 3000);
+
+});
+
+</script>
+
+
+</body>
+
+</html>

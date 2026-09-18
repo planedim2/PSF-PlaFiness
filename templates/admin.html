@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <strong>PSF</strong>
+
+        <span>PlaFitness</span>
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+        <a href="/dashboard" class="nav-button">
+            Dashboard
+        </a>
+
+        <a href="/logout" class="nav-button">
+            Log Out
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ADMIN DASHBOARD -->
+
+<main>
+
+    <section class="booking-section">
+
+        <div class="booking-box">
+
+            <p class="section-label">
+                PSF PLAFITNESS
+            </p>
+
+
+            <h2>
+                ADMIN <span>DASHBOARD.</span>
+            </h2>
+
+
+            <p>
+                Manage members, bookings, and messages.
+            </p>
+
+
+
+            <!-- ================================
+                 DASHBOARD TOTALS
+            ================================= -->
+
+            <div class="admin-stats">
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        {{ total_members }}
+                    </h3>
+
+                    <p>
+                        Total Members
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        {{ total_bookings }}
+                    </h3>
+
+                    <p>
+                        Total Bookings
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📩
+                    </div>
+
+                    <h3>
+                        {{ total_messages }}
+                    </h3>
+
+                    <p>
+                        Total Messages
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================
+                 MEMBERS
+            ================================= -->
+
+            <h3 class="admin-title">
+                👥 REGISTERED MEMBERS
+            </h3>
+
+
+            {% if users %}
+
+                <div class="admin-list">
+
+                    {% for user in users %}
+
+                        <div class="admin-item">
+
+                            <div>
+
+                                <strong>
+                                    {{ user["name"] }}
+                                </strong>
+
+                                <span>
+                                    {{ user["email"] }}
+                                </span>
+
+                            </div>
+
+
+                            <!-- DELETE USER -->
+
+                            <form
+                                method="POST"
+                                action="/delete-user/{{ user['id'] }}"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="button cancel-button"
+                                    onclick="return confirm('Are you sure you want to delete this member?');"
+                                >
+                                    Delete User
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <p>
+                    No members registered yet.
+                </p>
+
+            {% endif %}
+
+
+
+            <!-- ================================
+                 BOOKINGS
+            ================================= -->
+
+            <h3 class="admin-title">
+                📅 BOOKINGS
+            </h3>
+
+
+            {% if bookings %}
+
+                <div class="admin-list">
+
+                    {% for booking in bookings %}
+
+                        <div class="admin-item">
+
+                            <div>
+
+                                <strong>
+                                    {{ booking["name"] }}
+                                </strong>
+
+                                <span>
+                                    {{ booking["email"] }}
+                                </span>
+
+                                <span>
+                                    💪 {{ booking["session"] }}
+                                </span>
+
+                                <span>
+                                    📅 {{ booking["date"] }}
+                                </span>
+
+                                <span>
+                                    🕐 {{ booking["time"] }}
+                                </span>
+
+                            </div>
+
+
+                            <!-- DELETE BOOKING -->
+
+                            <form
+                                method="POST"
+                                action="/delete-booking/{{ booking['id'] }}"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="button cancel-button"
+                                    onclick="return confirm('Are you sure you want to delete this booking?');"
+                                >
+                                    Delete Booking
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <p>
+                    No bookings yet.
+                </p>
+
+            {% endif %}
+
+
+
+            <!-- ================================
+                 CONTACT MESSAGES
+            ================================= -->
+
+            <h3 class="admin-title">
+                📩 CONTACT MESSAGES
+            </h3>
+
+
+            {% if messages %}
+
+                <div class="admin-list">
+
+                    {% for message in messages %}
+
+                        <div class="admin-item">
+
+                            <div>
+
+                                <strong>
+                                    {{ message["name"] }}
+                                </strong>
+
+                                <span>
+                                    {{ message["email"] }}
+                                </span>
+
+                                <p>
+                                    {{ message["message"] }}
+                                </p>
+
+                            </div>
+
+
+                            <!-- DELETE MESSAGE -->
+
+                            <form
+                                method="POST"
+                                action="/delete-message/{{ message['id'] }}"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="button cancel-button"
+                                    onclick="return confirm('Are you sure you want to delete this message?');"
+                                >
+                                    Delete Message
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+            {% else %}
+
+                <p>
+                    No messages yet.
+                </p>
+
+            {% endif %}
+
+
+
+            <br>
+
+
+            <a
+                href="/dashboard"
+                class="button primary-button"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <strong>
+            PSF
+        </strong>
+
+        <span>
+            PlaFitness
+        </span>
+
+    </div>
+
+
+    <p>
+        YOUR GOALS • OUR MISSION
+    </p>
+
+
+    <div class="footer-line"></div>
+
+
+    <p class="copyright">
+        © 2026 PSF PlaFitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

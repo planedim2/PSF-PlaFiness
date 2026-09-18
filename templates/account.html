@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | PSF PlaFitness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+
+            <strong>PSF</strong>
+
+            <span>PlaFitness</span>
+
+        </a>
+
+
+        <div class="nav-buttons">
+
+            <a href="/dashboard" class="nav-button">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="nav-button">
+                Log Out
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ACCOUNT -->
+
+    <main>
+
+        <section class="booking-section">
+
+            <div class="booking-box">
+
+                <p class="section-label">
+                    PSF PLAFITNESS
+                </p>
+
+
+                <h2>
+                    MY <span>ACCOUNT.</span>
+                </h2>
+
+
+                <p>
+                    Manage and view your PSF PlaFitness account information.
+                </p>
+
+
+                <div class="workout-card">
+
+                    <div class="workout-icon">
+                        👤
+                    </div>
+
+
+                    <h3>
+                        Account Information
+                    </h3>
+
+
+                    <p>
+                        <strong>Name:</strong>
+                        {{ user_name }}
+                    </p>
+
+
+                    <p>
+                        <strong>Email:</strong>
+                        {{ user_email }}
+                    </p>
+
+                </div>
+
+
+                <br>
+
+
+                <a
+                    href="/dashboard"
+                    class="button primary-button"
+                >
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <strong>PSF</strong>
+
+            <span>
+                PlaFitness
+            </span>
+
+        </div>
+
+
+        <p>
+            YOUR GOALS • OUR MISSION
+        </p>
+
+
+        <div class="footer-line"></div>
+
+
+        <p class="copyright">
+            © 2026 PSF PlaFitness. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
